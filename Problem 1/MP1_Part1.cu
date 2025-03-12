@@ -1,4 +1,4 @@
-﻿// Kayne Lee, 20350003
+/* Kayne Lee, 20350003 */
 
 #include <cuda_runtime.h>
 #include <stdio.h>
