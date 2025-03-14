@@ -1,0 +1,14 @@
+Plotting Kernel Execution Time vs. Block Width:
+After running the program and recording the kernel execution times, you can plot the execution time vs. block width (number of blocks per block width). You would typically use a graphing tool like Python's matplotlib or Excel to create the plot.
+
+Answers to the Questions:
+How many times is each element of each input matrix loaded during the execution of the kernel?
+
+Each element of matrices A and B is accessed once by a thread for each matrix multiplication operation. Therefore, each element is loaded once from global memory.
+What is the floating-point computation to global memory access (CGMA) ratio in each thread?
+
+Each thread performs one multiplication and one addition per iteration of the innermost loop, so for an n x n matrix multiplication, each thread performs n multiplications and n-1 additions.
+Global memory accesses involve loading two matrix elements per iteration of the innermost loop (one from matrix A and one from matrix B), so each thread performs 2n memory accesses.
+CGMA ratio: Total floating-point operations per thread = 2n (multiplications + additions), Total memory accesses = 2n (loads from A and B). The ratio is 1:1, meaning that for every floating-point operation, there is one memory access.
+Conclusion:
+This implementation enables you to experiment with varying block sizes, and it answers the questions related to memory accesses and floating-point computations. The plotting of execution time will provide insights into the performance impact of different block configurations.
