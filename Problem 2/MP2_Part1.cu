@@ -136,7 +136,7 @@ void run_test(int dim, int tile) {
     cudaMemcpy(host_res, dev_res, dim*dim*sizeof(float), cudaMemcpyDeviceToHost);
     
     printf("gpu time: %.2f ms | ", gpu_ms);
-    printf("verification: %s\n", verify_result(host_a, host_b, host_res, dim) ? "passed" : "failed");
+    printf("verification: %s\n", verify_result(host_a, host_b, host_res, dim) ? "test PASSED" : "Test FAILED");
     
     free(host_a); free(host_b); free(host_res);
     cudaFree(dev_a); cudaFree(dev_b); cudaFree(dev_res);
